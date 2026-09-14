@@ -1,4 +1,4 @@
-from app.schemas.internship import Internship
+from schemas.internship import Internship
 
 
 internships = [
