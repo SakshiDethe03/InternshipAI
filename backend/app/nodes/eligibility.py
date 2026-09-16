@@ -1,6 +1,11 @@
-from app.schemas.resume import Resume
-from app.schemas.internship import Internship
-from app.schemas.eligibility import EligibilityResult
+try:
+    from schemas.resume import Resume
+    from schemas.internship import Internship
+    from schemas.eligibility import EligibilityResult
+except ModuleNotFoundError:
+    from app.schemas.resume import Resume
+    from app.schemas.internship import Internship
+    from app.schemas.eligibility import EligibilityResult
 
 
 def check_eligibility(resume: Resume, internship: Internship) -> EligibilityResult:

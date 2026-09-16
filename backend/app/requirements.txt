@@ -5,3 +5,8 @@ langgraph
 python-dotenv
 langchain-google-genai
 langchain-openrouter
+
+pypdf
+python-docx
+pytest
+pydantic

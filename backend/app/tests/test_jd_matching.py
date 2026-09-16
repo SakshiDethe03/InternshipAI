@@ -1,6 +1,6 @@
-from schemas.resume import Resume
-from data.internships import internships
-from nodes.jd_matching import match_resume_to_jd
+from app.schemas.resume import Resume
+from app.data.internships import internships
+from app.nodes.jd_matching import match_resume_to_jd
 
 
 resume = Resume(
@@ -11,8 +11,8 @@ resume = Resume(
     github="github.com/SakshiDethe03",
     role="AI Engineer",
     experience="Fresher",
-    skills=["Python", "Generative AI", "LangGraph", "Git"],
-    projects=["AI Support Agent", "AI Recruitment Agent"],
+    skills=["genai", "ml", "python"],
+    projects=["AI powered n8n blueprint generator"],
     summary="Final-year B.Tech student interested in Agentic AI.",
 )
 
