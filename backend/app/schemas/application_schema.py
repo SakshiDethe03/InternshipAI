@@ -8,8 +8,8 @@ class ApplicationData(BaseModel):
     # Applicant info
     name: str
     email: str
-    phone: str
-    linkedin: str
+    phone: Optional[str] = None
+    linkedin: Optional[str] = None
     github: Optional[str] = None
 
     # Applicant Resume
