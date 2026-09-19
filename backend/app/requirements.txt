@@ -5,7 +5,7 @@ langgraph
 python-dotenv
 langchain-google-genai
 langchain-openrouter
-
+uuid
 pypdf
 python-docx
 pytest

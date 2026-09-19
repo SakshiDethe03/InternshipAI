@@ -1,6 +1,7 @@
 from app.schemas.resume import Resume
 from app.data.internships import internships
 from app.nodes.eligibility import check_eligibility
+from graph.internship_graph import graph
 
 
 resume = Resume(
@@ -16,11 +17,13 @@ resume = Resume(
     summary="Final-year B.Tech student interested in Agentic AI.",
 )
 
+initial_state = {"resume": resume}
 
-internship = internships[0]
+result = graph.invoke(initial_state)
 
-result = check_eligibility(resume, internship)
+print("\n=============================")
+print("FINAL RESULT")
+print("===============================")
 
-print("Eligible:", result.is_eligible)
-print("Feedback:", result.feedback)
-print("Unmet requirements:", result.unmet_requirements)
+print("Submitted Applications:")
+print(result.get("submitted_applications", {}))

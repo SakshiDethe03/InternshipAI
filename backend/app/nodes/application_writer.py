@@ -1,5 +1,5 @@
 import json
-
+import uuid
 from schemas.resume import Resume
 from schemas.internship import Internship
 from schemas.JD_matching import JDMatchingResult
@@ -14,6 +14,8 @@ def write_application(
     internship: Internship,
     jd_match: JDMatchingResult,
 ) -> ApplicationData:
+
+    application_id = f"APP-{uuid.uuid4().hex[:8]}"
 
     # Build the prompt using information already available
     # from the resume, internship, and JD matching analysis.
@@ -35,7 +37,9 @@ def write_application(
     # Keep factual candidate and internship information directly
     # from validated objects instead of asking the LLM to generate it.
     application = ApplicationData(
+        application_id=application_id,
         internship_id=internship.internship_id,
+        status="AWAITING APPROVAL",
         name=resume.name,
         email=resume.email,
         phone=resume.phone,

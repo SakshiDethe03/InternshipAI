@@ -23,27 +23,29 @@ result = graph.invoke({"resume": resume})
 
 # Run the application writer using the state
 # produced by the previous graph nodes.
-application_result = application_writer_node(result)
+# application_result = application_writer_node(result)
 
 
-print("\n========= APPLICATION WRITER RESULT =========")
+# print("\n========= APPLICATION WRITER RESULT =========")
 
-for internship_id, application in application_result["application_data"].items():
+# for internship_id, application in application_result["application_data"].items():
 
-    print("\nInternship ID:", internship_id)
-    print("Name:", application.name)
-    print("Email:", application.email)
-    print("Phone:", application.phone)
-    print("LinkedIn:", application.linkedin)
-    print("GitHub:", application.github)
+#     print("\nApplication ID:", application.application_id)
+#     print("\nInternship ID:", internship_id)
+#     print("Status:", application.status)
+#     print("Name:", application.name)
+#     print("Email:", application.email)
+#     print("Phone:", application.phone)
+#     print("LinkedIn:", application.linkedin)
+#     print("GitHub:", application.github)
 
-    print("\nResume:")
-    print(application.resume)
+#     print("\nResume:")
+#     print(application.resume)
 
-    print("\nCover Letter:")
-    print(application.cover_letter)
+#     print("\nCover Letter:")
+#     print(application.cover_letter)
 
-    print("\nAnswers:")
-    for question, answer in application.answers.items():
-        print("\nQ:", question)
-        print("A:", answer)
+#     print("\nAnswers:")
+#     for question, answer in application.answers.items():
+#         print("\nQ:", question)
+#         print("A:", answer)

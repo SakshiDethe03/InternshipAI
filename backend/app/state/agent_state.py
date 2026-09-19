@@ -8,7 +8,8 @@ from schemas.match_decision import MatchDecisionResult
 
 from schemas.application_schema import ApplicationData
 
-# from schemas.submitted_application import SubmittedApplication
+from schemas.submitted_application import SubmittedApplication
+
 # from schemas.application_response import ApplicationResponse
 
 
@@ -26,11 +27,11 @@ class AIApplicationAgentState(TypedDict, total=False):
     jd_matching_results: dict[str, JDMatchingResult]
     match_decisions: dict[str, MatchDecisionResult]
 
-    # # Application
-    application_data: ApplicationData
+    # Application
+    application_data: dict[str, ApplicationData]
 
-    # # User approval
-    # user_approval: bool | None
+    # User approval
+    approval_status: dict[str, str]
 
-    # # Final submission
-    # submission_result: SubmittedApplication | None
+    # Final submission
+    submitted_applications: dict[str, SubmittedApplication]

@@ -1,9 +1,12 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import Optional
 
 
 class ApplicationData(BaseModel):
+    application_id: str
     internship_id: str
+
+    status: str
 
     # Applicant info
     name: str

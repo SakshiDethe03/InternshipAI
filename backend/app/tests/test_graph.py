@@ -9,7 +9,7 @@ resume = Resume(
     github="github.com/SakshiDethe03",
     role="AI Engineer",
     experience="Fresher",
-    skills=["Python", "Generative AI", "LangGraph", "Git"],
+    skills=["Python", "Generative AI", "LangGraph", "Git", "SQL", "RAG", "LangChain"],
     projects=["AI Support Agent", "AI Recruitment Agent"],
     summary="Final-year B.Tech student interested in Agentic AI.",
 )

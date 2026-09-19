@@ -16,9 +16,15 @@ def application_writer_node(state: AIApplicationAgentState):
 
         decision = match_decisions[internship.internship_id]
 
-        # Skip internships that should not continue
-        # to application preparation.
+        print("\n================ APPLICATION WRITER DEBUG ================")
+        print("Internship:", internship.internship_id)
+        print("Company:", internship.company)
+        print("Should continue:", decision.should_continue)
+        print("Category:", decision.category)
+        print("Reason:", decision.reason)
+
         if not decision.should_continue:
+            print("Skipping application for:", internship.internship_id)
             continue
 
         jd_match = jd_matching_results[internship.internship_id]
@@ -30,5 +36,10 @@ def application_writer_node(state: AIApplicationAgentState):
         )
 
         application_data[internship.internship_id] = application
+
+        print("Application created:", application.application_id)
+
+    print("\nApplications created:")
+    print(list(application_data.keys()))
 
     return {"application_data": application_data}
