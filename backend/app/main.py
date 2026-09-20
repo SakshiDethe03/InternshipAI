@@ -12,7 +12,7 @@ resume = Resume(
     github="github.com/SakshiDethe03",
     role="AI Engineer",
     experience="Fresher",
-    skills=["Python", "Generative AI", "LangGraph", "Git"],
+    skills=["Python", "Generative AI", "LangGraph", "Git", "LLMS", "RAG", "LangChain"],
     projects=["AI Support Agent", "AI Recruitment Agent"],
     summary="Final-year B.Tech student interested in Agentic AI.",
 )
@@ -22,6 +22,13 @@ initial_state = {"resume": resume}
 result = graph.invoke(initial_state)
 
 print("\n=============================")
+print("WORKFLOW STATUS")
+print("=============================")
+
+print("Status:", result.get("workflow_status"))
+print("Message:", result.get("workflow_message"))
+
+print("\n===============================")
 print("FINAL RESULT")
 print("===============================")
 

@@ -12,7 +12,7 @@ internships = [
         duration="3 months",
         description="Work on generative AI and machine learning applications.",
         requirements=["Python", "Machine Learning", "Generative AI", "Git"],
-        posted_at="2026-09-19T10:00:00",
+        posted_at="2026-09-20T10:00:00",
     ),
     Internship(
         internship_id="INT002",
@@ -24,7 +24,7 @@ internships = [
         duration="6 months",
         description="Build LLM-powered applications and RAG pipelines.",
         requirements=["Python", "LLMs", "RAG", "LangChain"],
-        posted_at="2026-09-19T12:00:00",
+        posted_at="2026-09-20T12:00:00",
     ),
     Internship(
         internship_id="INT003",

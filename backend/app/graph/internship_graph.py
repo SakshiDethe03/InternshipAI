@@ -3,7 +3,10 @@ from langgraph.graph import StateGraph, START, END
 from state.agent_state import AIApplicationAgentState
 
 from tools.search_internships import search_internships
-
+from nodes.search_result_node import (
+    search_result_node,
+    search_result_router,
+)
 from nodes.eligibility_node import eligibility_node
 from nodes.jd_matching_node import jd_matching_node
 from nodes.match_decision_node import match_decision_node
@@ -38,6 +41,7 @@ builder = StateGraph(AIApplicationAgentState)
 # =========================
 
 builder.add_node("search", search_node)
+builder.add_node("search_result", search_result_node)
 builder.add_node("eligibility", eligibility_node)
 builder.add_node("jd_matching", jd_matching_node)
 builder.add_node("match_decision", match_decision_node)
@@ -51,7 +55,21 @@ builder.add_node("submit", submission_node)
 # =========================
 
 builder.add_edge(START, "search")
-builder.add_edge("search", "eligibility")
+builder.add_edge("search", "search_result")
+
+# =========================
+# Search Result Routing
+# =========================
+
+builder.add_conditional_edges(
+    "search_result",
+    search_result_router,
+    {
+        "found": "eligibility",
+        "not_found": END,
+    },
+)
+
 builder.add_edge("eligibility", "jd_matching")
 builder.add_edge("jd_matching", "match_decision")
 builder.add_edge("match_decision", "application_writer")

@@ -33,5 +33,8 @@ class AIApplicationAgentState(TypedDict, total=False):
     # User approval
     approval_status: dict[str, str]
 
+    workflow_status: str
+    workflow_message: str
+
     # Final submission
     submitted_applications: dict[str, SubmittedApplication]
